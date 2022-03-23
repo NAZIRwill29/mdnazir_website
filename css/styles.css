@@ -1,53 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@300;400;700&family=Montserrat:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap');
 
 :root {
-    --blue: #22318E;
-    --dark-blue: #131939;
-    --indigo: #49228E;
-    --cyan: #5290C9;
-    --light-blue: #C3E0E5;
+    --main: #22318E;
+    --text: #131939;
+    --cta: #2c801f;
+    --cta-light: #bbfcb0;
+    --cta-dark: #1d5314;
+    --base: #8FD0F3;
 }
 
-/* font-family: 'Alegreya Sans', sans-serif; light regular bold
-font-family: 'Montserrat', sans-serif;  regular semi-bold*/
+/* font-family: 'Merriweather', serif;
+font-family: 'Open Sans', sans-serif; */
 body {
-    background-color: var(--light-blue);
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
-    margin: 60px 0 0;
+    background-color: var(--base);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 20px;
+    margin: 55px 0 0;
     scroll-behavior: smooth;
 }
 
-h1 {
-    font-family: 'Alegreya Sans', sans-serif;
+h1,
+h2,
+h3 {
+    font-family: 'Merriweather', serif;
+    letter-spacing: 1px;
+}
+
+p {
+    font-weight: 600;
 }
 
 .button {
-    border: 3px var(--cyan) solid;
+    border: 3px var(--text) solid;
     border-radius: 1.5rem;
     padding: 15px;
-    background-color: black;
-    color: var(--light-blue);
+    background-color: var(--cta);
+    color: var(--cta-light);
     font-weight: bold;
     cursor: pointer;
 }
 
 .button:hover {
-    border: 3px var(--indigo) solid;
-    background-color: var(--light-blue);
-    color: var(--dark-blue);
+    border: 3px var(--cta) solid;
+    background-color: var(--cta-light);
+    color: var(--cta-dark);
 }
 
 .button a:visited {
-    color: var(--light-blue);
+    color: var(--cta-light);
 }
 
 .button a:hover {
-    color: var(--dark-blue);
+    color: var(--text);
 }
 
 .button a:active {
-    color: var(--dark-blue);
+    color: var(--text);
 }
 
 ul {
@@ -60,13 +68,17 @@ nav {
     padding: 5px 30px 0;
     position: fixed;
     width: 100%;
-    background-color: var(--cyan);
+    background-color: var(--base);
+    border: 0 0 1px 0 solid var(--text);
     top: 0;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 18px;
-    color: var(--dark-blue);
+    color: var(--text);
     font-weight: bold;
     z-index: 2;
+    /* background: url(../images/website-background/sky7.png);
+    background-size: cover;
+    background-position: center; */
 }
 
 .logo,
@@ -91,7 +103,7 @@ nav {
 .nav-btn div {
     width: 35px;
     height: 5px;
-    background-color: var(--dark-blue);
+    background-color: var(--text);
     margin: 6px 0;
 }
 
@@ -113,6 +125,10 @@ nav {
     padding: 5px 0;
 }
 
+.navigation a:hover {
+    color: var(--cta-dark);
+}
+
 /* ----main section---- */
 
 main {}
@@ -127,26 +143,31 @@ section {
 
 .profile-section {
     padding: 50px 40px 10px;
-    color: var(--dark-blue);
-    background-color: var(--light-blue);
+    color: var(--text);
+    background-color: var(--base);
+    background: url(../images/website-background/sky1.png);
+    background-size: cover;
+    background-position: center;
 }
 
 .profile-description-section {
     padding: 0;
+    animation: fade-left 1.5s ease;
+    -moz-animation: fade-left 1.5s ease;
+    -webkit-animation: fade-left 1.5s ease;
 }
 
 .profile-description-section h1 {
     font-size: 3rem;
-    letter-spacing: 1px;
 }
 
 .profile-description-section em {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     font-size: 2rem;
     font-weight: normal;
 }
 
-.profile-description-section h4 {
+.profile-description-section p {
     font-size: 1.5rem;
 }
 
@@ -154,7 +175,11 @@ section {
     margin: 20px 0 0;
 }
 
-.profile-img-section {}
+.profile-img-section {
+    animation: fade-right 1.5s ease;
+    -moz-animation: fade-right 1.5s ease;
+    -webkit-animation: fade-right 1.5s ease;
+}
 
 .profile-img {
     width: 260px;
@@ -165,10 +190,15 @@ section {
 /* service section */
 
 .service-section {
-    background-color: var(--dark-blue);
-    color: var(--light-blue);
+    background-color: var(--base);
+    color: var(--text);
     padding: 40px 20px;
+    background-image: url(../images/website-background/sky1r.png);
+    background-size: cover;
+    background-position: center;
 }
+
+.service-header-section {}
 
 .service-header-section h2 {
     padding: 0 10px 5px;
@@ -182,7 +212,7 @@ section {
     padding: 20px 0;
 }
 
-.service-list-section h4 {
+.service-list-section h3 {
     font-size: 25px;
 }
 
@@ -194,13 +224,12 @@ section {
     display: flex;
     align-items: center;
     margin: 10px auto;
-    border: 3px var(--light-blue) solid;
+    border: 3px var(--text) solid;
     border-radius: 10px;
-    background-color: white;
+    background-color: var(--cta);
     flex-direction: column;
     padding: 10px;
 }
-
 
 .container-service img {
     height: 110px;
@@ -211,23 +240,47 @@ section {
 .container-service p {
     padding: 0 20px;
     display: inline-block;
-    font-family: 'Montserrat semi-bold', sans-serif;
-    color: var(--dark-blue);
+    font-family: 'Open Sans semi-bold', sans-serif;
+    color: var(--cta-light);
 }
 
 /* project section */
 
 .project-section {
-    background-color: var(--indigo);
-    color: var(--light-blue);
+    background-color: var(--base);
+    color: var(--text);
+    background-image: url(../images/website-background/sky1.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.project-header-section {
+    padding: 20px 0;
+}
+
+.project-list-section {
+    padding: 20px 0;
+}
+
+.project-list-section.active {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 .project-list-section div {
-    border: 4px var(--cyan) solid;
+    border: 4px var(--text) solid;
     border-radius: 20px;
     background-color: white;
     padding: 0;
     margin: 20px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 1s ease-out;
+}
+
+.project-list-section div:hover {
+    transform: scale(1.1);
 }
 
 .project-list-section img {
@@ -237,7 +290,10 @@ section {
 /* faq section */
 
 .faq-section {
-    color: var(--dark-blue);
+    color: var(--text);
+    background-image: url(../images/website-background/sky1r.png);
+    background-size: cover;
+    background-position: center;
 }
 
 .faq-header-section h2 {
@@ -254,32 +310,30 @@ section {
 }
 
 .btn-faq {
-    border: 2px var(--dark-blue) solid;
+    border: 2px var(--text) solid;
     border-radius: 20px;
     background-color: inherit;
-    padding: 10px;
+    padding: 0.75rem;
     width: 100%;
     text-align: left;
     margin: 10px 0;
-}
-
-.btn-faq h4 {
-    display: inline-block;
-    position: relative;
-    left: 0.15rem;
-    color: var(--dark-blue);
+    color: var(--text);
 }
 
 .btn-faq::after {
     content: "";
     width: 30px;
     height: 30px;
-    background: var(--light-blue) url("../images/arrow.svg") no-repeat;
+    background: url("../images/arrow.svg") no-repeat;
     background-size: 1.75rem;
-    right: 3rem;
+    right: 1rem;
     position: absolute;
     display: inline-block;
     transition: transform 1s ease-out;
+}
+
+.btn-faq:hover {
+    transform: scale(1.05);
 }
 
 .transform::after {
@@ -303,14 +357,17 @@ section {
 /* contactMe-section */
 
 .contactMe-section {
-    color: var(--dark-blue);
-    background-color: var(--dark-blue);
+    color: var(--text);
+    background-color: var(--base);
+    background-image: url(../images/website-background/sky1.png);
+    background-size: cover;
+    background-position: center;
 }
 
 .contactMe-section h2 {
     text-align: center;
     padding: 15px;
-    color: var(--light-blue);
+    color: var(--text);
 }
 
 .cta-section {
@@ -332,7 +389,7 @@ section {
 .email-section {
     padding: 10px 30px;
     background-color: white;
-    border: 2px var(--dark-blue) solid;
+    border: 2px var(--text) solid;
     border-radius: 5px;
 }
 
@@ -348,12 +405,12 @@ section {
 .email-section input {
     display: block;
     width: 100%;
-    border: 2px var(--dark-blue) solid;
+    border: 2px var(--text) solid;
     border-radius: 5px;
 }
 
 .email-section textarea {
-    border: 2px var(--dark-blue) solid;
+    border: 2px var(--text) solid;
     width: 100%;
     border-radius: 5px;
 }
@@ -363,7 +420,10 @@ section {
 
 footer {
     padding: 10px 40px 5px;
-    color: var(--dark-blue);
+    color: var(--text);
+    background-image: url(../images/website-background/sky1r.png);
+    background-size: cover;
+    background-position: top;
 }
 
 footer div {
@@ -448,7 +508,7 @@ footer p {
         font-size: 1.9rem;
     }
 
-    .profile-description-section h4 {
+    .profile-description-section p {
         font-size: 1.5rem;
     }
 
@@ -469,13 +529,9 @@ footer p {
         padding: 50px 70px 50px 70px;
     }
 
-    .btn-faq h4 {
-        left: 0.75rem;
-    }
+    .btn-faq {}
 
-    .btn-faq::after {
-        right: 6rem;
-    }
+    .btn-faq::after {}
 
     /* contactMe-section */
 
@@ -516,7 +572,7 @@ footer p {
         font-size: 2rem;
     }
 
-    .profile-description-section h4 {
+    .profile-description-section p {
         font-size: 2rem;
     }
 
@@ -543,13 +599,9 @@ footer p {
         padding: 50px 120px 50px 120px;
     }
 
-    .btn-faq h4 {
-        left: 2rem;
-    }
+    .btn-faq h4 {}
 
-    .btn-faq::after {
-        right: 9rem;
-    }
+    .btn-faq::after {}
 
     /* contactMe-section */
 
@@ -575,5 +627,143 @@ footer p {
 
     .social-media-link img {
         max-width: 1.75rem;
+    }
+}
+
+/* animation */
+.reveal {
+    position: relative;
+    opacity: 0;
+}
+
+.reveal.active {
+    opacity: 1;
+}
+
+.active.fade-bottom {
+    animation: fade-bottom 1.2s ease-in;
+    -moz-animation: fade-bottom 1.2s ease-in;
+    -webkit-animation: fade-bottom 1.2s ease-in;
+}
+
+.active.fade-left {
+    animation: fade-left 1.2s ease-in;
+    -moz-animation: fade-left 1.2s ease-in;
+    -webkit-animation: fade-left 1.2s ease-in;
+}
+
+.active.fade-right {
+    animation: fade-right 1.2s ease-in;
+    -moz-animation: fade-right 1.2s ease-in;
+    -webkit-animation: fade-right 1.2s ease-in;
+}
+
+@keyframes fade-bottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fade-bottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fade-bottom {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+
+@keyframes fade-left {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fade-left {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fade-left {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fade-right {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fade-right {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fade-right {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
